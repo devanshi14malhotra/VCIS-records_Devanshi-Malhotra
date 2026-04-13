@@ -1,0 +1,11 @@
+# Credentials and sensitive files
+config.php
+.env
+.env.local
+
+# IDE and system files
+.vscode/
+.DS_Store
+*.swp
+*.swo
+*~

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite 2026 UID Tracker | Synergy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tracker.css">
+</head>
+<body>
+    <main class="tracker-page">
+        <section class="tracker-shell" aria-label="Ignite 2026 UID tracker">
+            <header class="tracker-header">
+                <div class="brand-wrap">
+                    <img src="FooterLogo.png" data-fallback="../img/FooterLogo.png" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}" alt="Synergy Logo" class="brand-logo" loading="lazy">
+                    <div>
+                        <p class="brand-tag">SYNERGY SPORTS FEST</p>
+                        <h1>Ignite 2026 UID Tracker</h1>
+                        <p class="brand-sub">Search any participant by UID or Enrollment Number and track post-event status.</p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="search-card" aria-label="Search participant">
+                <form id="searchForm" class="search-form" novalidate>
+                    <div class="field grow">
+                        <label for="uidInput">UID or Enrollment Number</label>
+                        <input id="uidInput" name="uid" type="text" placeholder="Example: AB12CD3 or SYN2026-145" autocomplete="off" required>
+                    </div>
+                    <button type="submit" id="searchBtn" class="btn-primary">Fetch Details</button>
+                </form>
+                <p id="searchMessage" class="search-message" role="status" aria-live="polite"></p>
+            </section>
+
+            <section id="resultCard" class="result-card" hidden>
+                <div class="result-top">
+                    <h2>Participant Details</h2>
+                    <span id="uidBadge" class="uid-badge"></span>
+                </div>
+
+                <div class="details-grid" id="detailsGrid"></div>
+
+                <div class="sports-panel">
+                    <p class="panel-title">Registered Sports</p>
+                    <div id="sportsList" class="sports-list"></div>
+                </div>
+
+                <section id="winnerPanel" class="winner-panel" aria-label="Winner details" hidden>
+                    <p class="panel-title">Winner Details</p>
+                    <div id="winnerGrid" class="details-grid"></div>
+                </section>
+
+                <section class="status-panel" aria-label="Post-event status tracker">
+                    <div class="status-head">
+                        <h3>Post-Event Status</h3>
+                        <p>Update these 4 flags as the participant completes each process.</p>
+                    </div>
+                    <div class="status-grid">
+                        <label class="status-item" for="undertaking">
+                            <input id="undertaking" type="checkbox">
+                            <span>Undertaking</span>
+                        </label>
+                        <label class="status-item" for="certificateIssued">
+                            <input id="certificateIssued" type="checkbox">
+                            <span>Certificate Issued</span>
+                        </label>
+                        <label class="status-item" for="attendance">
+                            <input id="attendance" type="checkbox">
+                            <span>Attendance</span>
+                        </label>
+                        <label class="status-item" for="prizeMoneySent">
+                            <input id="prizeMoneySent" type="checkbox">
+                            <span>Prize Money Sent</span>
+                        </label>
+                    </div>
+                    <div class="status-actions">
+                        <button id="saveStatusBtn" type="button" class="btn-dark">Save Status</button>
+                        <p id="saveMessage" class="save-message" role="status" aria-live="polite"></p>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <script src="tracker.js"></script>
+</body>
+</html>
