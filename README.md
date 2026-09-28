@@ -6,3 +6,4 @@ Records of all tasks done during VC Internship (Sports Society)
 3. Made referee attendance sheets, scorecards, etc. and compiled files.
 4. UID FETCHER - https://igdtuwsynergy.in/UID/index.html
 5. Created Frontend and implemented RBAC for Synergy Inventory & Sports Equipment Tracker
+ -  https://github.com/synergy-igdtuw-web/inventory-management-system 
